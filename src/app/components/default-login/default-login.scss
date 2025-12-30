@@ -1,0 +1,89 @@
+@use "../../../styles/color-variables.scss" as c-var;
+
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    section {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main-section {
+        gap: 10px;
+        flex-grow: 1;
+        background-color: c-var.$gray-background;
+    }
+
+    .login-section {
+        flex-grow: 0.3;
+        padding: 0 35px;
+        
+        img {
+            margin-bottom: 45px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 45px;
+        }
+
+        .btn-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            gap: 30px;
+            .divider {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+                font-size: 14px;
+                color: c-var.$gray-background;
+                font-weight: 400;
+                text-transform: uppercase;
+
+                div {
+                    flex-grow: 1;
+                    height: 2px;
+                    background-color: c-var.$gray-background;
+                }
+                
+            }
+
+            button {
+                width: 100%;
+                border-radius: 10px;
+                font-size: 16px;
+                font-weight: 500;
+                border: none;
+                background: transparent;
+                padding: 12px 24px;
+                cursor: pointer;
+
+                &.btn-primary {
+                    background-color: c-var.$primary-color;  
+                    color: white;  
+                    box-shadow: 0 0 12px rgba($color: #00000046, $alpha: 0.3); 
+                }
+
+                &.btn-secondary {
+                    border: 1px solid c-var.$primary-color;
+                    color: c-var.$primary-color;
+                }
+            
+            }   
+        }
+        
+    }
+}

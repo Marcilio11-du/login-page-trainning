@@ -1,18 +1,19 @@
 <main>
-    <section>
+    <section class="login-section">
         <img src="logo.svg" alt="Logo Move It">
-        <h2></h2>
-        <button></button>
-        <div>
-            <span>or</span>
+        <h2>{{ title }}</h2>
+          <ng-content></ng-content>
+        <div class="btn-wrapper">
+            <button class="btn-primary">{{ primaryButtonText}}</button>
+            <div class="divider">
+                <div></div>
+                <span>or</span>
+                <div></div>
+            </div>
+            <button class="btn-secondary">{{ secondaryButtonText }}</button>
         </div>
-        <button></button>
-        <div>
-            <span>or</span>
-        </div>
-        <button></button>
     </section>
-    <section>
+    <section class="main-section">
         <h1>You Should move it!!</h1>
         <img src="Delivery.svg" alt="Homem com skate">
     </section>

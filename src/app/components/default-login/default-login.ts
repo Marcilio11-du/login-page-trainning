@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-default-login',
@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './default-login.scss',
 })
 export class DefaultLogin {
+
+  @Input() title: string = "";
+  @Input() primaryButtonText = "";
+  @Input() secondaryButtonText = "";
 
 }
