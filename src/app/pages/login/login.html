@@ -1,1 +1,11 @@
-<app-default-login></app-default-login>
+<app-default-login
+    title="Login into your account"
+    primaryButtonText="Login now"
+    secondaryButtonText="Sign up now"
+>
+
+    <form [formGroup]="loginForm">
+        <app-primary-input></app-primary-input>
+    </form>
+
+</app-default-login>
