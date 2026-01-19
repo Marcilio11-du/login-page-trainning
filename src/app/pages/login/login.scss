@@ -1,4 +1,7 @@
 form {
     width: 100%;
-    margin-bottom: 45px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 24px;
 }
