@@ -2,6 +2,8 @@
     title="Login into your account"
     primaryButtonText="Login now"
     secondaryButtonText="Sign up now"
+    (submit)="submitLogin()"
+    (navigate)="navigate()"
 >
 
     <form [formGroup]="loginForm">
