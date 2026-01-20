@@ -18,7 +18,7 @@ interface LoginForm {
     PrimaryInput,
   ],
   providers: [
-    Login
+    LoginService
   ],
   templateUrl: './login.html',
   styleUrl: './login.scss',
@@ -37,6 +37,7 @@ export class Login {
   }
 
   submitLogin() {
+    console.log(this.loginForm.value);
     this.loginService.login(
       this.loginForm.value.email,
       this.loginForm.value.password

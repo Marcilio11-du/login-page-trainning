@@ -11,7 +11,7 @@ type InputTypes = "text" | "email" | "password"
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useClass: forwardRef(() => PrimaryInput),
+      useExisting: forwardRef(() => PrimaryInput),
       multi: true
     }
   ],
