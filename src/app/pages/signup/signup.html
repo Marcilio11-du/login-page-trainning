@@ -1,0 +1,52 @@
+<app-default-login
+    title="Sign up for a new account"
+    primaryButtonText="Sign up now"
+    secondaryButtonText="Login now"
+    (submit)="submitLogin()"
+    (navigate)="navigate()"
+>
+
+    <form [formGroup]="signupform">
+
+        <app-primary-input
+            formControlName="name"
+            inputName="name"
+            type="text"
+            label="Name"
+            placeHolder="Nilton Domingos"
+            >
+            <img src="email.svg" alt="">
+        </app-primary-input>
+
+        <app-primary-input
+            formControlName="email"
+            inputName="email"
+            type="email"
+            label="Email"
+            placeHolder="nitcho@gmail.com"
+            >
+            <img src="email.svg" alt="">
+        </app-primary-input>
+
+        <app-primary-input
+            formControlName="password"
+            inputName="password"
+            type="password"
+            label="Your Password"
+            >
+            <img src="lock.svg" alt="">
+        </app-primary-input>
+
+        <app-primary-input
+            formControlName="confirmPassword"
+            inputName="confirmPassword"
+            type="password"
+            label="Confirm Your Password"
+            >
+            <img src="lock.svg" alt="">
+        </app-primary-input>
+    
+    </form>
+    
+
+</app-default-login>
