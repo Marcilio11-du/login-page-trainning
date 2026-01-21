@@ -28,7 +28,7 @@ export class Login {
 
   constructor(
     private router: Router,
-    private loginService: LoginService
+    private loginService: LoginService,
   ) {
       this.loginForm = new FormGroup({
         email: new FormControl('', [Validators.required, Validators.email]),
@@ -42,8 +42,8 @@ export class Login {
       this.loginForm.value.email,
       this.loginForm.value.password
     ).subscribe({
-      next: () => console.log("Login successful"),
-      error: () => console.log("Login failed")
+      next: () => alert("Login successful"),
+      error: () => alert("Login failed")
     }
     )
   }
