@@ -42,7 +42,8 @@ export class SignUp {
 
   submitLogin() {
     console.log(this.signupform.value);
-    this.loginService.login(
+    this.loginService.signUp(
+      this.signupform.value.name,
       this.signupform.value.email,
       this.signupform.value.password
     ).subscribe({

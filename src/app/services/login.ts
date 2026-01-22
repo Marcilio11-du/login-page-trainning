@@ -7,17 +7,29 @@ import { LoginResponse } from '../types/login-response';
   providedIn: 'root'
 })
 export class LoginService {
-  // Verifique se o seu backend usa /auth/login ou apenas /login
-  apiUrl: string = "http://localhost:8080/auth/login";
+  private apiUrl: string = "http://localhost:8080/auth";
 
   constructor(private httpClient: HttpClient) {}
 
   login(email: string, password: string): Observable<LoginResponse> {
-    return this.httpClient.post<LoginResponse>(this.apiUrl, { email, password }).pipe(
+    return this.httpClient.post<LoginResponse>(`${this.apiUrl}/login`, { email, password }).pipe(
       tap((value) => {
-        sessionStorage.setItem("auth-token", value.token);
-        sessionStorage.setItem("username", value.name);
+        this.saveSession(value.token, value.name);
       })
     );
+  }
+
+  signUp(name: string, email: string, password: string): Observable<LoginResponse> {
+    return this.httpClient.post<LoginResponse>(`${this.apiUrl}/register`, { name, email, password }).pipe(
+      tap((value) => {
+        this.saveSession(value.token, value.name);
+      })
+    );
+  }
+
+  // Criamos um método privado para não repetir código (DRY - Don't Repeat Yourself)
+  private saveSession(token: string, name: string) {
+    sessionStorage.setItem("auth-token", token);
+    sessionStorage.setItem("username", name);
   }
 }
